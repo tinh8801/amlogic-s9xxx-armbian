@@ -25,7 +25,7 @@ on:
         options:
           - 5.4.1_5.10.1
           - 5.15.1_6.1.1
-          - 5.4.1
+          - 5.4.238
           - 5.10.1
           - 5.15.1
           - 6.1.1
@@ -90,7 +90,7 @@ jobs:
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile the kernel
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: tinh8801/amlogic-s9xxx-armbian@main
         if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: kernel
